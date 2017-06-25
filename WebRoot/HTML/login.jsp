@@ -26,7 +26,7 @@
           <p></p>
         </div>
         <input type="submit" class="submit" value="登录" />
-        <a href="./register.html">注册</a>
+        <a href="${pageContext.request.contextPath }/HTML/register.jsp">注册</a>
       </form>
     </div>
   </body>
