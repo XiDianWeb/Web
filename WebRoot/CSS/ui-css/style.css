@@ -1,0 +1,137 @@
+
+
+* {margin: 0;
+   padding: 0;
+}
+
+body {
+	background-image: url(/WebOnline/Images/ui-image/body_tile.jpg);
+	background-position: center;
+	background-repeat: repeat-y;
+	font-size: 62.5%;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#container {
+	width: 954px;
+	font-size: 1.2em;
+	margin: 0 auto;
+}
+
+#left {
+	background-image: url(/WebOnline/Images/ui-image/left_bg.jpg);
+	float: left;
+	height: 434px;
+	width: 274px;
+	padding-top: 275px;
+}
+
+#right {
+	background-image: url(/WebOnline/Images/ui-image/right_bg.jpg);
+	float: left;
+	width: 590px;
+	padding-top:150px;
+	padding-right: 90px;
+	background-repeat: no-repeat;
+}
+
+#footer {
+	background-image: url(/WebOnline/Images/ui-image/footer.jpg);
+	background-repeat: no-repeat;
+	height: 100px;
+	width: 524px;
+	padding-left: 430px;
+	padding-top: 28px;
+	margin: 0 auto;
+	clear: both;
+}
+
+#navcontainer { width: 150px; }
+
+#navcontainer ul
+{
+margin-left: 55px;
+list-style-type: none;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+#navcontainer a
+{
+display: block;
+padding: 3px;
+width: 160px;
+}
+
+#navcontainer a:link, #navlist a:visited
+{
+	color: #74752b;
+	text-decoration: none;
+	background-image: url(/WebOnline/Images/ui-image/bullet.png);
+	background-repeat: no-repeat;
+	padding-left: 25px;
+	padding-bottom: 7px;
+	font-weight: bolder;
+}
+
+#navcontainer a:hover
+{
+	color: #75492b;
+	background-image: url(/WebOnline/Images/ui-image/bullet_hover.png);
+	background-repeat: no-repeat;
+}
+
+p {margin-bottom: 15px;
+   margin-top: 15px;}
+
+h1 {
+	text-align: center;
+	margin-top: -55px;
+	font-family: "Times New Roman", Times, serif;
+	font-style: italic;
+	color: #808D33;
+	font-size: 2em;
+}
+
+h2 {
+	text-align: center;
+	margin-top: 7px;
+	margin-bottom: 40px;
+	font-family: "Times New Roman", Times, serif;
+	font-style: italic;
+	color: #9BA46D;
+	font-size: 1.2em;
+}
+
+h3 {
+	text-align: left;
+	font-family: "Times New Roman", Times, serif;
+	font-style: italic;
+	color: #98A549;
+	font-size: 1.5em;
+}
+
+h4 {
+	text-align: left;
+	font-family: "Times New Roman", Times, serif;
+	font-style: italic;
+	color: #808D33;
+	font-size: 1.5em;
+	margin-left: 107px;
+	margin-bottom: 30px;
+}
+
+blockquote {
+	font-style: italic;
+	border: 1px dotted #98A549;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-bottom: 15px;
+	margin-top: 15px;
+	color:#98A549; /*#74752B;*/
+	
+}
+
+a:link {color: #7C8832}
+a:visited {color: #74752B}
+a:hover {color: #993300}
+a:active {color: #993300}

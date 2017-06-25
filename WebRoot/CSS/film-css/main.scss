@@ -1,0 +1,117 @@
+@import url(./_normalize.scss);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #171314;
+}
+header {
+  height: 280px;
+  background:url(../Images/film-image/Warcraft.jpg) ;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  h1 {
+    position: absolute;
+    margin: 0;
+    top: 140px;
+    left: 50%;
+    transform : translate(-50%,-50%);
+    font-size: 48px;
+    font-weight: 500;
+    color: #d7ecf1;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+}
+nav {
+  a{
+    text-decoration: none;
+    color: white;
+    padding: 3px;
+    border-radius: 3px;
+  }
+  a:hover {
+    background-color: #1999ec;
+  }
+  li {
+    display: inline-block;
+  }
+  .currentJob {
+    font-size: 20px;
+    text-align: center;
+    margin: 20px 0 20px 0;
+    li + li {
+      margin-left: 30px;
+    }
+  }
+  .otherJobs {
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0 20px 0;
+    li + li {
+      margin-left: 30px;
+    }
+  }
+}
+article {
+  width: 60%;
+  margin: 50px auto 50px auto;
+  padding-bottom: 50px;
+  color: #ffffff;
+  border-bottom: 1px solid white;
+  a {
+    padding: 3px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: #a3e2c5;
+  }
+  a:hover {
+    background-color: #1999ec;
+    color: #171314;
+  }
+  h2 {
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  h3 {
+    font-weight: 500;
+    text-indent: 1em;
+    margin: 5px 0 5px 0;
+  }
+  p {
+    text-indent: 2em;
+    line-height: 1.5em;
+  }
+  ol{
+    margin: 1em 4em;
+    line-height: 1.5em;
+  }
+}
+.salary {
+    border-style: none;
+}
+footer {
+  border-top: 1px solid white;
+  height: 80px;
+  p {
+    text-align: center;
+    margin: 40px auto 0 auto;
+    transform: translate(0,-50%);
+    color: white;
+  }
+}
+.toTop {
+  position: fixed;
+  right: 50px;
+  bottom: 100px;
+  padding: 5px;
+  border: 1px solid #171314;
+  background-color: #171314;
+  a{
+    text-decoration: none;
+    color:#a3e2c5; 
+  }
+}
