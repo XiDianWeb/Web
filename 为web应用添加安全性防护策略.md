@@ -1,0 +1,54 @@
+# 为web应用添加安全性防护策略
+> 盗用账号、缓冲区溢出以及执行任意命令是Web服务器比较常见的安全漏洞。黑客攻击、蠕虫病毒以及木马是因特网比较常见的安全漏洞。口令攻击、拒绝服务攻击以及IP欺骗是黑客攻击比较常见的类型。随着网络技术的不断发展，Web服务器面临着许多安全威胁，直接影响到Web服务器的安全。因此，加强Web服务器的安全防护是一项迫切需要的解决的时代课题。
+
+在web应用中可以使用Spring security和shiro策略增强web应用的安全性，我们在用户登录界面，教师自媒体以及付费问答等模块都设有相应的安全性防反策略，以提高我们网站的安全性。
+## 一、Spring security
+> Spring Security是一个能够为基于Spring的企业应用系统提供声明式的安全访问控制解决方案的安全框架。它提供了一组可以在Spring应用上下文中配置的Bean，充分利用了Spring IoC，DI（控制反转Inversion of Control ,DI:Dependency Injection依赖注入）和AOP（面向切面编程）功能，为应用系统提供声明式的安全访问控制功能，减少了为企业系统安全控制编写大量重复代码的工作。
+
+- 功能
+
+Spring Security对Web安全性的支持大量地依赖于Servlet过滤器。这些过滤器拦截进入请求，并且在应用程序处理该请求之前进行某些安全处理。 Spring Security提供有若干个过滤器，它们能够拦截Servlet请求，并将这些请求转给认证和访问决策管理器处理，从而增强安全性。如果使用过Servlet过滤器且令其正常工作，就必须在Web应用程序的web.xml文件中使用<filter>和<filter-mapping>元素配置它们。虽然这样做能起作用，但是它并不适用于使用依赖注入进行的配置。FilterToBeanProxy是一个特殊的Servlet过滤器，它本身做的工作并不多，而是将自己的工作委托给Spring应用程序上下文 中的一个Bean来完成。被委托的Bean几乎和其他的Servlet过滤器一样，实现javax.servlet.Filter接 口，但它是在Spring配置文件而不是web.xml文件中配置的。
+实际上，FilterToBeanProxy代理给的那个Bean可以是javax.servlet.Filter的任意实现。这可以是 Spring Security的任何一个过滤器，或者它可以是自己创建的一个过滤器。但是正如本书已经提到的那样，Spring Security要求至少配置四个而且可能一打或者更多的过滤器。
+
+- 整个流程 
+
+用户登陆，会被AuthenticationProcessingFilter拦截，调用AuthenticationManager的实现，而且AuthenticationManager会调用ProviderManager来获取用户验证信息（不同的Provider调用的服务不同，因为这些信息可以是在数据库上，可以是在LDAP服务器上，可以是xml配置文件上等），如果验证通过后会将用户的权限信息封装一个User放到spring的全局缓存SecurityContextHolder中，以备后面访问资源时使用。
+访问资源（即授权管理），访问url时，会通过AbstractSecurityInterceptor拦截器拦截，其中会调用FilterInvocationSecurityMetadataSource的方法来获取被拦截url所需的全部权限，在调用授权管理器AccessDecisionManager，这个授权管理器会通过spring的全局缓存SecurityContextHolder获取用户的权限信息，还会获取被拦截的url和被拦截url所需的全部权限，然后根据所配的策略（有：一票决定，一票否定，少数服从多数等），如果权限足够，则返回，权限不够则报错并调用权限不足页面。
+
+## 二、Shiro
+> Apache Shiro是一个强大且易用的Java安全框架,执行身份验证、授权、密码学和会话管理。使用Shiro的易于理解的API,您可以快速、轻松地获得任何应用程序,从最小的移动应用程序到最大的网络和企业应用程序。
+
+- 功能
+1. Subject：
+
+即“当前操作用户”。但是，在Shiro中，Subject这一概念并不仅仅指人，也可以是第三方进程、后台帐户（Daemon Account）或其他类似事物。它仅仅意味着“当前跟软件交互的东西”。但考虑到大多数目的和用途，你可以把它认为是Shiro的“用户”概念。
+
+2. SecurityManager：
+
+它是Shiro框架的核心，典型的Facade模式，Shiro通过SecurityManager来管理内部组件实例，并通过它来提供安全管理的各种服务。
+
+3. Realm：
+
+它充当了Shiro与应用安全数据间的“桥梁”或者“连接器”。也就是说，当对用户执行认证（登录）和授权（访问控制）验证时，Shiro会从应用配置的Realm中查找用户及其权限信息。从这个意义上讲，Realm实质上是一个安全相关的DAO：它封装了数据源的连接细节，并在需要时将相关数据提供给Shiro。当配置Shiro时，你必须至少指定一个Realm，用于认证和（或）授权。配置多个Realm是可以的，但是至少需要一个。Shiro内置了可以连接大量安全数据源（又名目录）的Realm，如LDAP、关系数据库（JDBC）、类似INI的文本配置资源以及属性文件等。如果缺省的Realm不能满足需求，你还可以插入代表自定义数据源的自己的Realm实现。
+
+- Realm实现流程
+
+1. 缓存机制
+
+Ehcache是很多Java项目中使用的缓存框架，Hibernate就是其中之一。它的本质就是将原本只能存储在内存中的数据通过算法保存到硬盘上，再根据需求依次取出。你可以把Ehcache理解为一个Map<String,Object>对象，通过put保存对象，再通过get取回对象。
+
+2. 散列算法与加密算法
+
+散列和加密本质上都是将一个Object变成一串无意义的字符串，不同点是经过散列的对象无法复原，是一个单向的过程。例如，对密码的加密通常就是使用散列算法，因此用户如果忘记密码只能通过修改而无法获取原始密码。但是对于信息的加密则是正规的加密算法，经过加密的信息是可以通过秘钥解密和还原。
+
+3. 匹配
+
+CredentialsMatcher是一个接口，功能就是用来匹配用户登录使用的令牌和数据库中保存的用户信息是否匹配。当然它的功能不仅如此。需要用到这个接口的一个实现类：HashedCredentialsMatcher。
+
+4. 获取用户的角色和权限信息
+
+说了这么多才到我们的重点Realm，如果你已经理解了Shiro对于用户匹配和注册加密的全过程，真正理解Realm的实现反而比较简单。上文提及的两个非常类似的对象AuthorizationInfo和AuthenticationInfo。因为Realm就是提供这两个对象的地方。
+
+5. 会话
+
+用户的一次登录即为一次会话，Shiro也可以代替Tomcat等容器管理会话。目的是当用户停留在某个页面长时间无动作的时候，再次对任何链接的访问都会被重定向到登录页面要求重新输入用户名和密码而不需要程序员在Servlet中不停的判断Session中是否包含User对象。启用Shiro会话管理的另一个用途是可以针对不同的模块采取不同的会话处理。

@@ -1,0 +1,334 @@
+body{
+	background-image: url("/WebOnline/Images/mine-image/backround.jpg" );
+}
+.xinlizixun{
+	width:1600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.top{
+	width: 100%;
+	height: 70px;
+	
+	
+}
+
+.top a{
+	font-size: 15pt;
+	font-family: fantasy;
+	color:white;
+}
+a:link{
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
+	color:red;
+}
+.page{
+	width: 277px;
+	height: 70px;
+	
+	float: left;
+}
+.navi{
+	width: 1346px;
+	height: 70px;
+	margin-left: 0px;
+	
+	float: left; 
+	font-family: "宋体";
+	font-size: 15pt;
+}
+.navi table{
+	margin-left: 0px;
+	border: 1px solid red;
+	padding: 0px;
+}
+.navi ul{
+	width: 1346px;
+	height: 67px;
+	list-style-type: none;
+	padding: 0px;
+	margin:0;
+}
+.navi ul li{
+	width: 250px;
+	height: 68px;
+	float: left;
+	margin-left: 0px;
+	margin-top: 0px;
+	text-align: center;
+		
+}
+.myhref{
+	width: 276px;
+	height: 68px;
+	float:right;
+	background-color: green;
+}
+
+.logo{
+	width: 137px;
+	height: 68px;
+	background-color: yellow;
+	float: left;
+	margin-top: 5px;
+}
+.main{
+	width: 1307px;
+	height:950px;
+	margin:auto;
+	margin-top: 5px;
+	padding-top: 20px;
+}
+.heart{
+	width: 400px;
+	height: 300px;
+	background-color: red;
+	margin-left: 20px;
+	float: left;
+}
+.heart2{
+	width: 806px;
+	height: 300px;
+	background-color: red;
+	margin-left: 40px;
+	margin-right:20px;
+	float: right;
+}
+.text{
+	width: 1067px;
+	margin-top:20px;
+	margin-right:20px;
+	margin-left:20px;
+	height:600px;
+	float: left;
+	border:1px solid gray;
+}
+.aixin{
+	width: 178px;
+	height: 185px;
+	float: right;
+	margin-right:20px;
+	margin-top:20px;
+	
+}
+.aixin img{
+	margin-left: 1px;
+	margin-top: 1px;
+}
+.books{
+	width: 1268px;
+	margin-left:20px;
+	height: 463px;
+	
+}
+.books img{
+	margin-top: 0px;
+}
+.eachbook1{
+	width: 295px;
+	height: 398px;
+	margin-left: 49px;
+	margin-top: 0px;
+	float: left;
+}
+.eachbook2{
+	width: 295px;
+	height: 398px;
+	margin-left: 145px;
+	margin-top: 0px;
+	float: left;
+}
+.eachbook3{
+	width: 295px;
+	height: 398px;
+	margin-right: 49px;
+	margin-top: 0px;
+	float: right;
+}
+.site{
+	width: 529px;
+	height: 455px;
+	margin-left: 20px;
+	margin-top:20px;
+	float: left;
+	border:1px solid gray;
+}
+.site ul li{
+	margin-top: 10px;
+}
+.exam{
+	width: 660px;
+	height: 455px;
+	margin-left: 20px;
+	margin-top:20px;
+	float: left;
+	border:1px solid gray;
+	
+}
+.salaryofcity{
+	width: 714px;
+	height: 410px;
+	margin-left: 20px;
+	float: left;
+	border:1px solid gray;
+	
+}
+.salarys{
+	width: 495px;
+	height: 410px;
+	margin-left: 20px;
+	margin-right:30px;
+	float: right;
+	border:1px solid gray;
+	
+}
+.cpage{
+	width: 714px;
+	height: 510px;
+	margin-left: 20px;
+	margin-top:20px;
+	float: left;
+	border:1px solid gray;
+		
+}
+.salarypage{
+	width: 675px;
+	height: 175px;
+	margin-left: 20px;
+	margin-right:20px;
+	margin-top:20px;
+	border:1px solid gray;
+	
+}
+.salarypage2{
+	width: 438px;
+	height: 235px;
+	margin-left: 20px;
+	margin-top:20px;
+	border:1px solid gray;
+}
+.textwithpage{
+	margin-top: 10px;
+}
+.textwithpage2{
+	margin-top: 50px;
+}
+.toplasttext{
+	width: 504px;
+	height: 506px;
+	margin-left: 20px;
+	margin-top:20px;
+	margin-right:20px;
+	border:1px solid gray;
+	float: right;
+}
+.toplittletext1{
+	width: 80%;
+	height: 18%;
+	border:0;
+	
+}
+.toplittletext2{
+	width: 20%;
+	height: 18%;
+	border-left:1px solid gray;
+	border-top:1px solid gray;
+	float:right;
+	
+}
+.button{
+	margin-top: 35px;
+}
+
+.xinli1{
+	width: 440px;
+	height: 305px;
+	margin-left: 20px;
+	border:1px solid gray;
+	float: left;
+	
+}
+.textwithxinli1{
+	width: 770px;
+	height: 404px;
+	margin-right: 20px;
+	border:1px solid gray;
+	float: right;
+	
+}
+.xinli2{
+	width: 440px;
+	height: 609px;
+	margin-left: 20px;
+	margin-top:20px;
+	border:1px solid gray;
+	float: left;
+}
+.textwithxinli2{
+	width: 515px;
+	height: 287px;
+	margin-left: 50px;
+	margin-top:20px;
+	border:1px solid gray;
+	float: left;
+}
+.textwithxinli2image{
+	width: 220px;
+	height: 510px;
+	margin-top:20px;
+	margin-bottom:10px;
+	margin-right:20px;
+	border:1px solid gray;
+	float: right;
+}
+.textwithvideo1{
+	width: 440px;
+	height:50px;
+	margin-left: 20px;
+	margin-top:20px;
+	border:1px solid gray;
+	float: left;
+}
+.textwithvideo2{
+	width: 239px;
+	height: 200px;
+	border:1px solid gray;
+	float: right;
+}
+.xinli3{
+	width: 515px;
+	height: 203px;
+	margin-right: 20px;
+	margin-left  :50px;
+	margin-top:20px;
+	border:1px solid gray;
+	float: left;
+}
+.introduce1{
+	width: 436px;
+	height: 306px;
+	margin-left:100px;
+	border:1px solid gray;
+	float: left;
+}
+.introduce2{
+	width: 519px;
+	height: 327px;
+	margin-left:100px;
+	border:1px solid gray;
+	float: left;
+}
+.textwithintroduce{
+	width: 1245px;
+	height: 593px;
+	margin-left: 20px;
+	margin-top:10px;
+	border:1px solid gray;
+	float: left;
+	
+}
+
+
